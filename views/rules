@@ -1,13 +1,74 @@
 <grid-column class="posts-view">
     <card-big class="no-elastic no-hover">
-        <text-heading>Diretrizes</text-heading>
+        <text-heading>Diretrizes de Conteúdo</text-heading>
     </card-big>
     <horizontal-divider></horizontal-divider>
 
 
     <card-big class="no-elastic no-hover">
         <text-paragraph>
-            A
+            Este documento visa definir as diretrizes de conteúdo da rádio com as seguintes finalidades:
+        </text-paragraph>
+        <text-paragraph>
+            1. Buscando transparência esclarecer aos nossos usuários os critérios utilizados na escolha de conteúdo.
+        </text-paragraph>
+        <text-paragraph>
+            2. Definir as diretrizes que regem nossas políticas de adição e remoção de conteúdo.
+        </text-paragraph>
+        <text-paragraph>
+            Com esta introdução, nossas diretrizes são:
+        </text-paragraph>
+        <text-paragraph>
+            1. Não adicionaremos conteúdo adulto (com classificação somente para maiores de 18 anos);
+        </text-paragraph>
+        <text-paragraph>
+            2. Não adicionaremos conteúdo com apologia à violência, uso de drogas ou bebida alcóolica ou sexualmente
+            explícito.
+        </text-paragraph>
+        <text-paragraph>
+            3. Não adicionaremos conteúdo com apologia a satanismo, magia negra, ocultismo, misticismo, feitiçaria,
+            bruxaria ou similares.
+        </text-paragraph>
+        <text-paragraph>
+            4. Não adicionaremos conteúdo com racismo ou preconceito de gênero, raça, cor ou religião, apologia ao
+            nazismo ou qualquer tipo supremacismo.
+        </text-paragraph>
+        <text-paragraph>
+            5. Solicitações para inclusão de trilhas que violem as normas acimas serão ignoradas e reservamo-nos ao
+            direito de não respondê-las.
+        </text-paragraph>
+        <text-paragraph>
+            6. Reservamo-nos ao direito de previamente recusar solicitações para inclusão de trilhas dos seguintes
+            estilos musicais:
+        </text-paragraph>
+        <text-paragraph>
+            <li>
+                * Funk ou qualquer gênero com apologia a drogas ou conteúdo sexualmente explícito.
+            </li>
+            <li>
+                * Rap ou qualquer gênero com apologia à violência e/ou uso de drogas.
+            </li>
+            <li>
+                * Heavy Metal, Death Metal ou qualquer gênero com apologia à morte, satanismo, ocultismo, magia negra ou
+                similares.
+            </li>
+            <li>
+                * Sertanejo universitário ou qualquer gênero com apologia a bebida alcóolica.
+            </li>
+        </text-paragraph>
+        <text-paragraph>
+            7. Reservamo-nos ao direito de não incluir uma trilha sem aviso de acordo com nosso critério.
+        </text-paragraph>
+        <text-paragraph>
+            8. Solicitações de remoção de conteúdo só devem ser enviadas caso o conteúdo viole explícitamente estes
+            termos ou caso você acredite que um conteúdo está sendo disponibilizado ferindo nosso porpósito geral ou
+            causando uma má experiência.
+            Solicitações de remoção por motivos de gosto musical ou razões pessoais não serão atendidas, pois buscamos
+            uma experiência plural, para todas as idades e todos os gostos, sempre com alta qualidade.
+        </text-paragraph>
+        <text-paragraph>
+            Contudo estamos sempre aberto a sugestões e buscando sempre conteúdo novo e de qualidade e ficamos ansiosos
+            por suas solicitações de adição de conteúdo.
         </text-paragraph>
         <text-paragraph>
             Atenciosamente,
