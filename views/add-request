@@ -32,8 +32,8 @@
     </card-big>
     <card-big class="no-elastic no-hover">
         <text-paragraph>
-            Apenas solicite adição de conteúdo após ler nossas diretrizes, solicitações que não esteja de acordo com
-            elas serão ignoradas.
+            Apenas solicite adição de conteúdo após ler nossas diretrizes, solicitações que não estejam de acordo com
+            elas serão ignoradas, bem como solicitações com informações faltantes ou incorretas.
         </text-paragraph>
         <button-squared onclick="App.Rules()">Diretrizes de conteúdo</button-squared>
     </card-big>
@@ -46,6 +46,7 @@
 </grid-column>
 
 <span id="form" style="display: none;">
+    Solicitação: ADIÇÃO DE CONTEÚDO
     Nome da música:
     Nome do artisa/grupo:
     Seu nome completo:

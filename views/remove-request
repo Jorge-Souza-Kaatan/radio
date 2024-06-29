@@ -1,18 +1,54 @@
 <grid-column class="posts-view">
     <card-big class="no-elastic no-hover">
-        <text-heading>Diretrizes</text-heading>
+        <text-heading>Solicitação de inclusão</text-heading>
     </card-big>
     <horizontal-divider></horizontal-divider>
     <card-big class="no-elastic no-hover">
         <text-paragraph>
-            A
+            Utilize este recurso caso tenha encontrado uma trilha em nosso repertório que acredita que
+            não deveria estar presente por ferir nossa política ou nosso propósito geral.
+        </text-paragraph>
+    </card-big>
+    <card-big class="no-elastic no-hover">
+        <text-paragraph>
+            Para efetuar essa solicitação você deve nos enviar os seguintes dados:
         </text-paragraph>
         <text-paragraph>
-            Atenciosamente,
+            Nome da música:
         </text-paragraph>
         <text-paragraph>
-            Jorge Souza Oliveira dos Santos
+            Nome do artisa/grupo:
         </text-paragraph>
-
+        <text-paragraph>
+            Seu nome completo:
+        </text-paragraph>
+        <text-paragraph>
+            Seu email:
+        </text-paragraph>
+        <text-label onclick="() => {
+            navigator.clipboard.write(document.getElementById('form').innerText.replace('  ', ''));
+            this.innerText = 'Texto copiado para a área de transferência';
+            }">Copiar</text-label>
+    </card-big>
+    <card-big class="no-elastic no-hover">
+        <text-paragraph>
+            Apenas solicite a remoção de conteúdo após ler nossas diretrizes, solicitações que não estejam de acordo com
+            elas serão ignoradas, bem como solicitações com informações faltantes ou incorretas.
+        </text-paragraph>
+        <button-squared onclick="App.Rules()">Diretrizes de conteúdo</button-squared>
+    </card-big>
+    <card-big class="no-elastic no-hover">
+        <text-paragraph>
+            Envie sua solicitação pelo link abaixo:
+        </text-paragraph>
+        <button-squared onclick="window.open('mailto:fragatasoftware@outlook.com')">Contato</button-squared>
     </card-big>
 </grid-column>
+
+<span id="form" style="display: none;">
+    Solicitação: REMOÇÃO DE CONTEÚDO
+    Nome da música:
+    Nome do artisa/grupo:
+    Seu nome completo:
+    Seu email:
+</span>
