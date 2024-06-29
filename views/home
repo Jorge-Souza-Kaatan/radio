@@ -1,7 +1,7 @@
 <grid-column class="posts-view" style="display: flex;">
     <card-big>
         <text-subheading>
-            Radio Kaatan
+            Rádio Kaatan
         </text-subheading>
     </card-big>
     <card-big id="player">
