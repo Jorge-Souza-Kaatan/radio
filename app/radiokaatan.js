@@ -43,7 +43,7 @@ const Radio = {
             radio.addEventListener("ended", App.PlayPause);
             radio.addEventListener("error", App.PlayPause);
             radio.onvolumechange = e => {
-                if (document.getElementById('radio').volume == 0) {
+                if (document.getElementById('radio').volume == 1) {
                     document.getElementById("mute-btn").querySelector("img").src = "/radio/files/volume.svg";
                 } else {
                     document.getElementById("mute-btn").querySelector("img").src = "/radio/files/mute.svg";
