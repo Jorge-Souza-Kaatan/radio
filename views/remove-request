@@ -26,7 +26,9 @@
             Seu email:
         </text-paragraph>
         <text-label onclick="() => {
-            navigator.clipboard.write(document.getElementById('form').innerText.replace('  ', ''));
+            let x = document.getElementById('form').innerText;
+            x = x.replaceAll('  ', '');
+            navigator.clipboard.writeText(x);
             this.innerText = 'Texto copiado para a área de transferência';
             }">Copiar</text-label>
     </card-big>
