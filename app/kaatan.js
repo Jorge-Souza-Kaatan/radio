@@ -37,7 +37,55 @@ const App = {
             }
         }
     },
-    About: async () => { },
+    About: async () => {
+        let _ = document.createElement("span");
+        Renderer.Load("about").then(about => {
+            APPVIEW.innerHTML = about;
+        });
+        APPVIEW.style.alignItems = "start";
+        //_.style.borderBlock = "none";
+        APPVIEW.style.borderInline = "var(--ForegroundElementHover) 1px solid";
+    },
+    Rules: async () => {
+        let _ = document.createElement("span");
+        Renderer.Load("rules").then(rules => {
+            APPVIEW.innerHTML = rules;
+        });
+        APPVIEW.style.alignItems = "start";
+        APPVIEW.style.borderInline = "var(--ForegroundElementHover) 1px solid";
+    },
+    AddTrackRequest: async () => {
+        let _ = document.createElement("span");
+        Renderer.Load("add-request").then(addRequest => {
+            APPVIEW.innerHTML = addRequest;
+        });
+        APPVIEW.style.alignItems = "start";
+        APPVIEW.style.borderInline = "var(--ForegroundElementHover) 1px solid";
+    },
+    RemoveTrackRequest: async () => {
+        let _ = document.createElement("span");
+        Renderer.Load("remove-request").then(removeRequest => {
+            APPVIEW.innerHTML = removeRequest;
+        });
+        APPVIEW.style.alignItems = "start";
+        APPVIEW.style.borderInline = "var(--ForegroundElementHover) 1px solid";
+    },
+    Terms: async () => {
+        let _ = document.createElement("span");
+        Renderer.Load("terms").then(terms => {
+            APPVIEW.innerHTML = terms;
+        });
+        APPVIEW.style.alignItems = "start";
+        APPVIEW.style.borderInline = "var(--ForegroundElementHover) 1px solid";
+    },
+    Support: async () => {
+        let _ = document.createElement("span");
+        Renderer.Load("support").then(support => {
+            APPVIEW.innerHTML = support;
+        });
+        APPVIEW.style.alignItems = "start";
+        APPVIEW.style.borderInline = "var(--ForegroundElementHover) 1px solid";
+    },
     LOOP: () => {
         setTimeout(App.LOOP, 1999);
     },

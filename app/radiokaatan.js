@@ -57,6 +57,7 @@ const Radio = {
         const link = Radio.Links[id];
         //
         document.getElementById('radio').volume = 0;
+        App.Mute();
         //
         let audioElement = document.createElement("audio");
         audioElement.setAttribute("autoplay", true);
@@ -68,13 +69,12 @@ const Radio = {
         audioElement.src = link;
         document.body.appendChild(audioElement);
         audioElement.play();
-        audioElement.onended = e => {
-            Radio.PlayAds();
-        };
+        audioElement.onended = Radio.PlayAds;
     },
     PlayAds: async () => {
         if (!Radio.IsPlaying) return;
         document.getElementById('radio').volume = Radio.Volume;
+        App.Mute();
     },
     _: async () => { },
 }

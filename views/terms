@@ -1,0 +1,18 @@
+<grid-column class="posts-view">
+    <card-big class="no-elastic no-hover">
+        <text-heading>Diretrizes</text-heading>
+    </card-big>
+    <horizontal-divider></horizontal-divider>
+    <card-big class="no-elastic no-hover">
+        <text-paragraph>
+            A
+        </text-paragraph>
+        <text-paragraph>
+            Com carinho,
+        </text-paragraph>
+        <text-paragraph>
+            Jorge Souza Oliveira dos Santos
+        </text-paragraph>
+
+    </card-big>
+</grid-column>

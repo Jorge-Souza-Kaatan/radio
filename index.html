@@ -39,34 +39,39 @@
             },
             {
                 LinkTile: "Diretrizes",
-                LinkIcon: "/files/home.svg",
-                LinkAction: () => App.Main()
+                LinkIcon: "/files/notes.svg",
+                LinkAction: () => App.Rules()
             },
             {
                 LinkTile: "Inclusão de trilha",
-                LinkIcon: "/files/home.svg",
-                LinkAction: () => App.Main()
+                LinkIcon: "/files/plus.svg",
+                LinkAction: () => App.AddTrackRequest()
             },
             {
                 LinkTile: "Remoção de trilha",
-                LinkIcon: "/files/home.svg",
-                LinkAction: () => App.Main()
+                LinkIcon: "/files/delete.svg",
+                LinkAction: () => App.RemoveTrackRequest()
             },
             {
                 LinkTile: "Termos de uso",
                 LinkIcon: "/files/home.svg",
-                LinkAction: () => App.Main()
+                LinkAction: () => App.Terms()
             },
             {
                 LinkTile: "Contato e suporte",
-                LinkIcon: "/files/home.svg",
-                LinkAction: () => App.Main()
+                LinkIcon: "/files/help-icon.svg",
+                LinkAction: () => App.Support()
             },
             {
-                LinkTile: "O desenvolvedor",
-                LinkIcon: "/files/home.svg",
-                LinkAction: () => App.Main()
+                LinkTile: "Blog",
+                LinkIcon: "/files/news.svg",
+                LinkAction: () => window.open('https://www.kaatan.com.br/news')
             },
+            {
+                LinkTile: "Anúncio",
+                LinkIcon: "/files/megaphone-speaker-svgrepo-com.svg",
+                LinkAction: () => window.open('https://www.kaatan.com.br/anuncio')
+            }
         ],
         ShowProfileSection: false,
         ProfileSection: {

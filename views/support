@@ -1,0 +1,42 @@
+<grid-column class="posts-view">
+    <card-big class="no-elastic no-hover">
+        <text-heading>Contato e suporte</text-heading>
+    </card-big>
+    <horizontal-divider></horizontal-divider>
+    <card-big class="no-elastic no-hover">
+        <text-paragraph>
+            Estamos ansiosos em te ouvir!
+        </text-paragraph>
+        <text-paragraph>
+            Se tiver alguma dúvida, sugestão, crítica ou elogio, ou se deseja reportar um erro que está enfrentando com
+            a aplicação, não hesite em entrar em contato.
+        </text-paragraph>
+        <text-paragraph>
+            Desde já avisamos que por vezes a transmissão pode ficar fora do ar por alguns instantes restabelecendo o
+            sinal assim que possível, isso acontece porque com frequência
+            precisamos efetuar manutenção da aplicação bem como de nossos servidores sempre buscando oferecer o melhor
+            serviço.
+        </text-paragraph>
+        <text-paragraph>
+            Caso você esteja enfrentando este problema e não está conseguindo ouvir nossa rádio, preparamos uma
+            transmissão alternativa para não te deixar na mão!
+            Você pode ouvir nossa rádio a qualquer momento pelo stream Zeno, no link abaixo
+        </text-paragraph>
+        <button-squared onclick="window.open('https://zeno.fm/player/radio-kaatan')">
+            Link alternativo
+        </button-squared>
+        <text-paragraph>
+            Caso não seja este o problema e você deseja entrar em contato por um dos motivos expostos anteriormente,
+            fique a vontade para no enviar um email clicando no link abaixo:
+        </text-paragraph>
+        <button-squared onclick="window.open('mailto:fragatasoftware@outlook.com')">
+            Contato
+        </button-squared>
+
+    </card-big>
+</grid-column>
+<style>
+    .posts-view text-paragraph {
+        text-indent: 50px;
+    }
+</style>
