@@ -54,3 +54,9 @@
     Seu nome completo:
     Seu email:
 </span>
+
+<style>
+    text-paragraph {
+        text-indent: 50px;
+    }
+</style>
