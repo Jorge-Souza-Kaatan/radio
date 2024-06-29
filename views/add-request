@@ -28,7 +28,7 @@
         <text-paragraph>
             Seu email:
         </text-paragraph>
-        <text-label onclick="() => {
+        <text-label onclick="{
             let x = document.getElementById('form').innerText;
             x = x.replaceAll('  ', '');
             navigator.clipboard.writeText(x);
