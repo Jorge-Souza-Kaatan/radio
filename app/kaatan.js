@@ -15,12 +15,12 @@ const App = {
     PlayPause: () => {
         if (!Radio.IsPlaying) {
             if (Radio.Stream()) {
-                document.getElementById("play-btn").querySelector("img").src = "/files/pause.svg";
+                document.getElementById("play-btn").querySelector("img").src = "files/pause.svg";
                 document.getElementById("paused").style.display = "none";
                 document.getElementById("playing").style.display = "block";
             }
         } else {
-            document.getElementById("play-btn").querySelector("img").src = "/files/play.svg";
+            document.getElementById("play-btn").querySelector("img").src = "files/play.svg";
             document.getElementById("paused").style.display = "block";
             document.getElementById("playing").style.display = "none";
             Radio.Stream();
@@ -30,10 +30,10 @@ const App = {
         if (document.getElementById('radio') != null) {
             if (document.getElementById('radio').volume == 0) {
                 document.getElementById('radio').volume = 1;
-                document.getElementById("mute-btn").querySelector("img").src = "/files/volume.svg";
+                document.getElementById("mute-btn").querySelector("img").src = "files/volume.svg";
             } else {
                 document.getElementById('radio').volume = 0;
-                document.getElementById("mute-btn").querySelector("img").src = "/files/mute.svg";
+                document.getElementById("mute-btn").querySelector("img").src = "files/mute.svg";
             }
         }
     },

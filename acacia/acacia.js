@@ -43,10 +43,10 @@ class AcaciaApp extends HTMLElement {
         const topBarMenuIcon = document.createElement("img");
         topBarMenuIcon.id = "menu-icon";
         topBarMenuIcon.onclick = Renderer.SideMenu.Show;
-        topBarMenuIcon.src = "/files/menu.svg";
+        topBarMenuIcon.src = "files/menu.svg";
         const topBarIconsContainer = document.createElement("icons-container");
         const topBarLogo = document.createElement("img");
-        topBarLogo.src = "/files/conjunto_branco.svg"
+        topBarLogo.src = "files/conjunto_branco.svg"
         topBarLogo.id = "topbar-logo";
         topBarLogo.onclick = async () =>  window.location.reload();
         topBarIconsContainer.appendChild(topBarLogo);
