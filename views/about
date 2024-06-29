@@ -36,56 +36,11 @@
 
     </card-big>
 </grid-column>
+
+
+
 <style>
-    h1 {
-        color: var(--White);
-    }
-
-    h2 {
-        color: var(--White);
-    }
-
-    h3 {
-        color: var(--White);
-    }
-
-    ul {
-        color: var(--White);
-    }
-
-    ol {
-        color: var(--White);
-    }
-
-    li {
-        color: var(--White);
-    }
-
-    p {
-        color: var(--White);
-    }
-
-    strong {
-        color: var(--White);
-    }
-
-    em {
-        color: var(--White);
-    }
-
-    hr {
-        color: var(--White);
-    }
-
-    a {
-        color: var(--White);
-    }
-
-    img {
-        color: var(--White);
-    }
-
-    blockquote {
-        color: var(--White);
+    text-paragraph {
+        text-indent: 50px;
     }
 </style>

@@ -79,3 +79,9 @@
 
     </card-big>
 </grid-column>
+
+<style>
+    text-paragraph {
+        text-indent: 50px;
+    }
+</style>
