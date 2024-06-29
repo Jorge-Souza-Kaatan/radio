@@ -42,6 +42,13 @@ const Radio = {
             Radio.IsPlaying = true;
             radio.addEventListener("ended", App.PlayPause);
             radio.addEventListener("error", App.PlayPause);
+            radio.onvolumechange = e => {
+                if (document.getElementById('radio').volume == 0) {
+                    document.getElementById("mute-btn").querySelector("img").src = "/radio/files/volume.svg";
+                } else {
+                    document.getElementById("mute-btn").querySelector("img").src = "/radio/files/mute.svg";
+                }
+            }
             return true;
         } else {
             document.body.removeChild(document.getElementById('radio'));
@@ -51,15 +58,14 @@ const Radio = {
     },
     SpeakHour: async () => {
         if (!Radio.IsPlaying) return;
-        let id = new Date().toLocaleTimeString().split(":").join("").slice(0,-2);
-        if(Number(id) > 1259) id = (Number(id) - 1200).toString().padStart(4, "0"); 
+        let id = new Date().toLocaleTimeString().split(":").join("").slice(0, -2);
+        if (Number(id) > 1259) id = (Number(id) - 1200).toString().padStart(4, "0");
         const link = Radio.Links[id];
         //
         App.Mute();
         //
         let audioElement = document.createElement("audio");
         audioElement.setAttribute("autoplay", true);
-        audioElement.id = "radio";
         audioElement.style.display = 'none';
         audioElement.controls = null;
         audioElement.autoplay = true;
@@ -71,7 +77,6 @@ const Radio = {
     },
     PlayAds: async () => {
         if (!Radio.IsPlaying) return;
-        document.getElementById('radio').volume = Radio.Volume;
         App.Mute();
     },
     _: async () => { },
