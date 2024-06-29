@@ -27,7 +27,7 @@
         </button-squared>
         <text-paragraph>
             Caso não seja este o problema e você deseja entrar em contato por um dos motivos expostos anteriormente,
-            fique a vontade para no enviar um email clicando no link abaixo:
+            fique a vontade para nos enviar um email clicando no link abaixo:
         </text-paragraph>
         <button-squared onclick="window.open('mailto:fragatasoftware@outlook.com')">
             Contato
