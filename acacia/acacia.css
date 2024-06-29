@@ -10,7 +10,7 @@
     --ForegroundElementHover: #303540;
     --ForegroundInvert: #DD2080;
     --Gradiente45: linear-gradient(45deg, #DD2080, #00DD88)1;
-    --SplashImage: url("files/splash.svg");
+    --SplashImage: url("/radio/files/splash.svg");
     cursor: url("pointer.cur") 0 0, auto;
 }
 

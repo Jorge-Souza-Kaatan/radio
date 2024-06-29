@@ -172,7 +172,7 @@ const Renderer = {
         MainTopBar: () => {
             window.TOPBAR.innerHTML = "";
             const ids = ["menu-kt-logo", "", "menu-profile-pic", "menu-mini"];
-            const imgsSrc = ["files/conjunto_branco.svg", "", "files/default.svg", "files/menumini.svg"];
+            const imgsSrc = ["/radio/files/conjunto_branco.svg", "", "/radio/files/default.svg", "/radio/files/menumini.svg"];
             const actions = ["", "", "MyProfile", "MyLearning", ""];
             for (let i = 0; i < 5; i++) {
                 const span = document.createElement("span");
@@ -198,7 +198,7 @@ const Renderer = {
         BackTopBar: (callback = () => { }) => {
             window.TOPBAR.innerHTML = "";
             const ids = ["menu-back-btn", "", "menu-profile-pic", "menu-learn-pic", "menu-mini"];
-            const imgsSrc = ["files/arrow.svg", "", "files/default.svg", "files/book.svg", "files/menumini.svg"];
+            const imgsSrc = ["/radio/files/arrow.svg", "", "/radio/files/default.svg", "/radio/files/book.svg", "/radio/files/menumini.svg"];
             const actions = ["", "", "MyProfile", "MyLearning", ""];
             for (let i = 0; i < 5; i++) {
                 const span = document.createElement("span");
@@ -225,7 +225,7 @@ const Renderer = {
             window.TOPBAR.innerHTML = "";
             //
             const topBarLogo = document.createElement("img");
-            topBarLogo.src = "files/conjunto_branco.svg"
+            topBarLogo.src = "/radio/files/conjunto_branco.svg"
             topBarLogo.id = "topbar-logo";
             topBarLogo.onclick = () => window.location.reload();
             TOPBAR.appendChild(topBarLogo);
@@ -234,7 +234,7 @@ const Renderer = {
 
             /*
             const ids = ["menu-kt-logo", "", "menu-mini"];
-            const imgsSrc = ["files/conjunto_branco.svg", "", "files/menumini.svg"];
+            const imgsSrc = ["/radio/files/conjunto_branco.svg", "", "/radio/files/menumini.svg"];
             for (let i = 0; i < 3; i++) {
                 const span = document.createElement("span");
                 if (ids[i] != "") span.id = ids[i];
@@ -283,7 +283,7 @@ const Renderer = {
                 const closeBtn = document.createElement("close-button");
                 closeBtn.onclick = Renderer.SideMenu.Show;
                 const closeBtnImg = document.createElement("img");
-                closeBtnImg.src = "files/close.svg";
+                closeBtnImg.src = "/radio/files/close.svg";
                 closeBtn.appendChild(closeBtnImg);
                 smTitleBar.appendChild(closeBtn);
                 smContainer.appendChild(smTitleBar);

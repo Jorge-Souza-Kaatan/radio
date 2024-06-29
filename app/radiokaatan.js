@@ -6,7 +6,7 @@ const Radio = {
     URL1: "https://vertically-possible-duck.ngrok-free.app/stream",
     URL2: "https://stream.zeno.fm/sklftdr6odruv",
     GetLinks: (callback) => {
-        fetch("/app/links.json").then(res => res.json()).then(links => {
+        fetch("/radio/app/links.json").then(res => res.json()).then(links => {
             Radio.Links = links;
             console.log("Links requested");
             callback();
