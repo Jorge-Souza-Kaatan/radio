@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jorge Souza Oliveira dos Santos">
+    <meta name="description" content="">
+
+    <!-- SCRIPTS -->
+    <script src="/app/kaatan.js"></script>
+    <script src="/app/radiokaatan.js"></script>
+    <script src="/acacia/acacia.js"></script>
+    <script src="/acacia/content.js"></script>
+    <script src="/acacia/renderer.js"></script>
+    <!-- STYLES -->
+    <link rel="stylesheet" href="app/app.css">
+    <link rel="stylesheet" href="acacia/acacia.css">
+    <!-- PWA -->
+    <link rel="shortcut icon" href="files/ret_branco.svg" type="image/x-icon">
+    <title></title>
+</head>
+
+<body></body>
+
+</html>
+<script>
+    const sideMenu = {
+        Links: [
+            {
+                LinkTile: "Início",
+                LinkIcon: "/files/home.svg",
+                LinkAction: () => App.Main()
+            },
+            {
+                LinkTile: "Sobre",
+                LinkIcon: "/files/info.svg",
+                LinkAction: () => App.About()
+            },
+            {
+                LinkTile: "Diretrizes",
+                LinkIcon: "/files/home.svg",
+                LinkAction: () => App.Main()
+            },
+            {
+                LinkTile: "Inclusão de trilha",
+                LinkIcon: "/files/home.svg",
+                LinkAction: () => App.Main()
+            },
+            {
+                LinkTile: "Remoção de trilha",
+                LinkIcon: "/files/home.svg",
+                LinkAction: () => App.Main()
+            },
+            {
+                LinkTile: "Termos de uso",
+                LinkIcon: "/files/home.svg",
+                LinkAction: () => App.Main()
+            },
+            {
+                LinkTile: "Contato e suporte",
+                LinkIcon: "/files/home.svg",
+                LinkAction: () => App.Main()
+            },
+            {
+                LinkTile: "O desenvolvedor",
+                LinkIcon: "/files/home.svg",
+                LinkAction: () => App.Main()
+            },
+        ],
+        ShowProfileSection: false,
+        ProfileSection: {
+            ProfilePic: null,
+            ProfileName: null,
+            ProfileUsername: null,
+            Action: null
+        }
+
+    }
+
+    const acacia = new Acacia("RADIO | Kaatan - 100% Brasileira", false, false, sideMenu, App.Main);
+</script>

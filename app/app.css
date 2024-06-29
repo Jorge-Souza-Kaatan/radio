@@ -1,0 +1,152 @@
+/* #region LAYOUT */
+.menu-button {
+    height: 40px;
+    width: 40px;
+    padding: 4px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.menu-button:hover {
+    opacity: 1;
+    background-color: var(--ForegroundElementHover);
+}
+
+#kaatan-top-bar span img,
+#kaatan-top-bar #menu-kt-logo img {
+    height: 32px;
+}
+
+#kaatan-top-bar #menu-kt-logo {
+    height: 40px;
+    padding: 4px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+#kaatan-top-bar #menu-back-btn {
+    background-color: var(--ForegroundInvert);
+    display: grid;
+    place-items: center;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+/* #endregion */
+
+/* #region POSTS */
+.js-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    box-sizing: border-box;
+}
+
+.js-video iframe,
+.js-video img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 5px #000A;
+    box-sizing: border-box;
+    user-select: none;
+    pointer-events: none;
+    border: none;
+}
+
+.posts-view {
+    top: 0;
+    gap: 5px;
+    width: 100%;
+    height: fit-content;
+}
+
+.posts-view text-label {
+    cursor: pointer;
+    width: fit-content;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
+.posts-view text-label:hover {
+    color: var(--Foreground);
+}
+
+.posts-view text-label.active {
+    background-color: var(--BackgroundElementHover);
+}
+
+/* #endregion */
+
+.profile-stats {
+    padding: 5px;
+    gap: 5px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto auto auto auto 1fr auto;
+}
+
+
+.profile-pic {
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.profile-pic img {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 0 !important;
+    border: black 5px solid !important;
+    border-radius: 75px;
+    box-sizing: border-box;
+}
+
+.profile-pic:hover img {
+    opacity: 0.3;
+}
+
+.profile-pic:hover #profile-pic-edit {
+    display: block;
+}
+
+#profile-pic-edit {
+    display: none;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 0 20px 0 20px !important;
+}
+
+#status-data {
+    height: 80px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto 1fr auto;
+    border-radius: 40px !important;
+}
+
+#status-data-img {
+    height: 70px;
+    display: grid;
+    place-items: center;
+    border-radius: 35px;
+    overflow: hidden;
+}
+#status-data-img img {
+    height: 70px;
+}

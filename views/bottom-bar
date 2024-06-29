@@ -1,0 +1,57 @@
+<div class="bottom-bar">
+    <span class="void"></span>
+    <span id="refresh-btn" onclick="window.location.reload()" class="elastic">
+        <img id="refresh-btn-img" src="/files/refresh.svg">
+    </span>
+    <span id="play-btn" onclick="App.PlayPause()" class="elastic">
+        <img id="play-btn-img" src="/files/play.svg">
+    </span>
+    <span id="mute-btn" onclick="App.Mute()" class="elastic">
+        <img id="mute-btn-img" src="/files/volume.svg">
+    </span>
+    <span class="void"></span>
+</div>
+<style>
+    .bottom-bar {
+        background-color: transparent;
+        width: 100%;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr auto auto auto 1fr;
+    }
+
+    .bottom-bar span {
+        width: 100%;
+        height: 40px;
+        opacity: 0.6;
+        cursor: pointer;
+        display: flex;
+        min-width: 40px;
+    }
+
+    .bottom-bar span:hover {
+        opacity: 1;
+    }
+
+    .bottom-bar span img {
+        width: 32px;
+        margin: auto;
+    }
+
+    #play-btn-img {
+        width: 40px;
+        margin: 0 10px 0 10px;
+    }
+
+    #refresh-btn-img {
+        width: 32px;
+        margin: auto;
+    }
+
+    #mute-btn-img {
+        width: 32px;
+        margin: auto;
+    }
+</style>
