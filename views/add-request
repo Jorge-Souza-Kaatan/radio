@@ -6,12 +6,12 @@
     <card-big class="no-elastic no-hover">
         <text-paragraph>
             Utilize este recurso caso conheça uma trilha que acredita que poderia estar entre o repertório da rádio
-            e desde que ela não viole nossas diretrizes.
+            e desde que ela não viole nossa política de conteúdo.
         </text-paragraph>
     </card-big>
-    <card-big>
+    <card-big class="no-elastic no-hover">
         <text-paragraph>
-            Para efetuar essa solicitação você deve nos enviar um formulário como este:
+            Para efetuar essa solicitação você deve nos enviar os seguintes dados:
         </text-paragraph>
         <text-paragraph>
             Nome da música:
@@ -26,10 +26,22 @@
             Seu email:
         </text-paragraph>
         <text-label onclick="() => {
-            navigator.clipboard.write(document.getElementById('form').innerText)
-            }">Copiar formulário</text-label>
+            navigator.clipboard.write(document.getElementById('form').innerText.replace('  ', ''));
+            this.innerText = 'Texto copiado para a área de transferência';
+            }">Copiar</text-label>
     </card-big>
-
+    <card-big class="no-elastic no-hover">
+        <text-paragraph>
+            Apenas solicite adição de conteúdo após ler nossas diretrizes, solicitações que não esteja de acordo com
+            elas serão ignoradas.
+        </text-paragraph>
+        <button-squared onclick="App.Rules()">Diretrizes de conteúdo</button-squared>
+    </card-big>
+    <card-big class="no-elastic no-hover">
+        <text-paragraph>
+            Envie sua solicitação pelo link abaixo:
+        </text-paragraph>
+        <button-squared onclick="window.open('mailto:fragatasoftware@outlook.com')">Contato</button-squared>
     </card-big>
 </grid-column>
 
