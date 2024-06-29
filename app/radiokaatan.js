@@ -50,13 +50,11 @@ const Radio = {
         }
     },
     SpeakHour: async () => {
-        console.log("Quarter Hour!");
         if (!Radio.IsPlaying) return;
         let id = new Date().toLocaleTimeString().split(":").join("").slice(0,-2);
         if(Number(id) > 1259) id = (Number(id) - 1200).toString().padStart(4, "0"); 
         const link = Radio.Links[id];
         //
-        document.getElementById('radio').volume = 0;
         App.Mute();
         //
         let audioElement = document.createElement("audio");
