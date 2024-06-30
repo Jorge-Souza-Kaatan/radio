@@ -13,20 +13,6 @@
             Tocando os maiores sucessos nacionais de todos os tempos
         </text-paragraph>
     </card-big>
-    <grid-row style="gap: 5px;">
-        <card-big class="no-elastic no-hover" style="cursor: pointer;"
-            onclick="window.open('https://www.kaatan.com.br')">
-            <text-label style="text-align: center; width: 100%;">
-                Visite: kaatan.com.br
-            </text-label>
-        </card-big>
-        <card-big class="no-elastic no-hover" style="cursor: pointer;"
-            onclick="window.open('https://www.jorgesouza.com.br')">
-            <text-label style="text-align: center; width: 100%;">
-                Desenvolvido por: Jorge Souza
-            </text-label>
-        </card-big>
-    </grid-row>
 </grid-column>
 <style>
     #player {
