@@ -3,7 +3,7 @@ const Radio = {
     IsPlaying: false,
     IsChecked: false,
     Volume: 1,
-    URL1: "https://kaatan.loophole.site/stream",
+    URL1: "https://kaatan.loophole.site/radio/stream",
     URL2: "https://stream.zeno.fm/sklftdr6odruv",
     GetLinks: (callback) => {
         fetch("/radio/app/links.json").then(res => res.json()).then(links => {
