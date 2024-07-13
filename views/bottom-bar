@@ -1,13 +1,13 @@
 <div class="bottom-bar">
     <span class="void"></span>
     <span id="refresh-btn" onclick="window.location.reload()" class="elastic">
-        <img id="refresh-btn-img" src="files/refresh.svg">
+        <img id="refresh-btn-img" src="/files/refresh.svg">
     </span>
     <span id="play-btn" onclick="App.PlayPause()" class="elastic">
-        <img id="play-btn-img" src="files/play.svg">
+        <img id="play-btn-img" src="/files/play.svg">
     </span>
     <span id="mute-btn" onclick="App.Mute()" class="elastic">
-        <img id="mute-btn-img" src="files/volume.svg">
+        <img id="mute-btn-img" src="/files/volume.svg">
     </span>
     <span class="void"></span>
 </div>
