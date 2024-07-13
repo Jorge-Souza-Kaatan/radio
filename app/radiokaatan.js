@@ -6,10 +6,21 @@ const Radio = {
     URL1: "https://kaatan.loca.lt/radio/stream",
     URL2: "https://stream.zeno.fm/sklftdr6odruv",
     GetLinks: (callback) => {
-        fetch("app/links.json").then(res => res.json()).then(links => {
+        fetch("../app/links.json").then(res => res.json()).then(links => {
             Radio.Links = links;
             console.log("Links requested");
             callback();
+        }).catch(() => {
+            Modal.Error("Erro", "Houve um erro ao iniciar a aplicação. Clique em Reiniciar e tente novamente", true, null);
+        });
+    },
+    GetUrl: () => {
+        return new Promise((resolve, reject) => {
+            fetch(Radio.URL1).then(() => {
+                resolve(Radio.URL1);
+            }).catch(() => {
+                resolve(Radio.URL2);
+            });
         });
     },
     TimeControl: async (callback) => {
@@ -28,16 +39,11 @@ const Radio = {
             setInterval(callback, 15 * 60 * 1000);
         }, timeToNextQuarter);
     },
-    Stream: () => {
+    Stream: async () => {
         if (!Radio.IsPlaying) {
-            let radio = document.createElement("audio");
-            radio.id = "radio";
-            radio.style.display = 'none';
-            radio.controls = null;
-            radio.autoplay = true;
+            const radio = document.getElementById("radio");
             radio.setAttribute("type", "audio/mpeg");
-            radio.src = Radio.URL1;
-            document.body.appendChild(radio);
+            radio.src = await Radio.GetUrl();
             radio.play();
             Radio.IsPlaying = true;
             radio.addEventListener("ended", App.PlayPause);
@@ -51,7 +57,8 @@ const Radio = {
             }
             return true;
         } else {
-            document.body.removeChild(document.getElementById('radio'));
+            const radio = document.getElementById("radio");
+            radio.pause();
             Radio.IsPlaying = false;
             return false;
         }
@@ -61,19 +68,13 @@ const Radio = {
         let id = new Date().toLocaleTimeString().split(":").join("").slice(0, -2);
         if (Number(id) > 1259) id = (Number(id) - 1200).toString().padStart(4, "0");
         const link = Radio.Links[id];
-        //
+        console.log(link)
         App.Mute();
-        //
-        let audioElement = document.createElement("audio");
-        audioElement.setAttribute("autoplay", true);
-        audioElement.style.display = 'none';
-        audioElement.controls = null;
-        audioElement.autoplay = true;
-        audioElement.setAttribute("type", "audio/mpeg");
-        audioElement.src = link;
-        document.body.appendChild(audioElement);
-        audioElement.play();
-        audioElement.onended = Radio.PlayAds;
+        const hr = document.getElementById("hr");
+        hr.setAttribute("type", "audio/mpeg");
+        hr.src = link;
+        hr.play();
+        hr.onended = Radio.PlayAds;
     },
     PlayAds: async () => {
         if (!Radio.IsPlaying) return;
@@ -81,5 +82,5 @@ const Radio = {
     },
     _: async () => { },
 }
-Radio.GetLinks(() => Radio.TimeControl(Radio.SpeakHour));
 
+Radio.GetLinks(() => Radio.TimeControl(Radio.SpeakHour));
