@@ -1,6 +1,6 @@
 <grid-column class="posts-view">
     <card-big class="no-elastic no-hover">
-        <text-heading>Solicitação de inclusão</text-heading>
+        <text-heading>Solicitação de remoção</text-heading>
     </card-big>
     <horizontal-divider></horizontal-divider>
     <card-big class="no-elastic no-hover">

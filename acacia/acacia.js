@@ -34,7 +34,7 @@ class AcaciaApp extends HTMLElement {
         const head = document.querySelector("head");
         const acaciaCSS = document.createElement("style");
         acaciaCSS.setAttribute("rel", "stylesheet");
-        acaciaCSS.setAttribute("href", "/radio/acacia/acacia.css");
+        acaciaCSS.setAttribute("href", "acacia.css");
         head.appendChild(acaciaCSS);
 
         const acaciaApp = this;
@@ -43,10 +43,10 @@ class AcaciaApp extends HTMLElement {
         const topBarMenuIcon = document.createElement("img");
         topBarMenuIcon.id = "menu-icon";
         topBarMenuIcon.onclick = Renderer.SideMenu.Show;
-        topBarMenuIcon.src = "/radio/files/menu.svg";
+        topBarMenuIcon.src = "../files/menu.svg";
         const topBarIconsContainer = document.createElement("icons-container");
         const topBarLogo = document.createElement("img");
-        topBarLogo.src = "/radio/files/conjunto_branco.svg"
+        topBarLogo.src = "../files/conjunto_branco.svg"
         topBarLogo.id = "topbar-logo";
         topBarLogo.onclick = async () =>  window.location.reload();
         topBarIconsContainer.appendChild(topBarLogo);
@@ -409,7 +409,7 @@ const Modal = {
             let anm = document.createElement("div");
             anm.id = "animation-container";
             let img = document.createElement("img");
-            img.setAttribute("src", "/radio/acacia/loading.svg");
+            img.setAttribute("src", "loading.svg");
             anm.appendChild(img);
             box.appendChild(anm);
     
@@ -494,7 +494,7 @@ const Modal = {
             animationContainer.setAttribute("id", "animation-container");
     
             let img = document.createElement("img");
-            img.setAttribute("src", "/radio/acacia/erro.svg");
+            img.setAttribute("src", "erro.svg");
     
             animationContainer.appendChild(img);
     
