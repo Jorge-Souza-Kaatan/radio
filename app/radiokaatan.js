@@ -6,7 +6,7 @@ const Radio = {
     URL1: "https://kaatan.loca.lt/radio/stream",
     URL2: "https://stream.zeno.fm/sklftdr6odruv",
     GetLinks: (callback) => {
-        fetch("/app/links.json").then(res => res.json()).then(links => {
+        fetch("/radio/app/links.json").then(res => res.json()).then(links => {
             Radio.Links = links;
             console.log("Links requested");
             callback();
@@ -50,9 +50,9 @@ const Radio = {
             radio.addEventListener("error", App.PlayPause);
             radio.onvolumechange = e => {
                 if (document.getElementById('radio').volume == 1) {
-                    document.getElementById("mute-btn").querySelector("img").src = "/files/volume.svg";
+                    document.getElementById("mute-btn").querySelector("img").src = "/radio/files/volume.svg";
                 } else {
-                    document.getElementById("mute-btn").querySelector("img").src = "/files/mute.svg";
+                    document.getElementById("mute-btn").querySelector("img").src = "/radio/files/mute.svg";
                 }
             }
             return true;

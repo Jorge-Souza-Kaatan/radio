@@ -5,8 +5,8 @@
         </text-subheading>
     </card-big>
     <card-big id="player">
-        <img id="paused" src="/files/radio_signal.svg">
-        <img id="playing" src="/files/radio_signal_on.svg" style="display: none;">
+        <img id="paused" src="/radio/files/radio_signal.svg">
+        <img id="playing" src="/radio/files/radio_signal_on.svg" style="display: none;">
     </card-big>
     <card-big>
         <text-paragraph style="text-align: center;">
