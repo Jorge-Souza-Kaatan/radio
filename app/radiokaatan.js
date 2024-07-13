@@ -14,14 +14,14 @@ const Radio = {
             Modal.Error("Erro", "Houve um erro ao iniciar a aplicação. Clique em Reiniciar e tente novamente", true, null);
         });
     },
-    GetUrl: () => {
-        return new Promise((resolve, reject) => {
-            fetch(Radio.URL1).then(() => {
-                resolve(Radio.URL1);
-            }).catch(() => {
-                resolve(Radio.URL2);
-            });
-        });
+    GetUrl: async () => {
+        try {
+            const x = await fetch(Radio.URL1);
+            if (x.status == 200) return Radio.URL1;
+            throw new Error();
+        } catch (error) {
+            return Radio.URL2;
+        }
     },
     TimeControl: async (callback) => {
         const now = new Date();
