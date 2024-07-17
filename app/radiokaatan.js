@@ -5,6 +5,7 @@ const Radio = {
     Volume: 1,
     URL1: "https://kaatan.loca.lt/radio/stream",
     URL2: "https://stream.zeno.fm/sklftdr6odruv",
+    FallbackURL: false,
     GetLinks: (callback) => {
         fetch("/radio/app/links.json").then(res => res.json()).then(links => {
             Radio.Links = links;
@@ -17,9 +18,13 @@ const Radio = {
     GetUrl: async () => {
         try {
             const x = await fetch(Radio.URL1);
-            if (x.status == 200) return Radio.URL1;
+            if (x.status == 200) {
+                Radio.FallbackURL = false;
+                return Radio.URL1;
+            }
             throw new Error();
         } catch (error) {
+            Radio.FallbackURL = true;
             return Radio.URL2;
         }
     },
@@ -64,7 +69,7 @@ const Radio = {
         }
     },
     SpeakHour: async () => {
-        if (!Radio.IsPlaying) return;
+        if (!Radio.IsPlaying || Radio.FallbackURL) return;
         let id = new Date().toLocaleTimeString().split(":").join("").slice(0, -2);
         if (Number(id) > 1259) id = (Number(id) - 1200).toString().padStart(4, "0");
         const link = Radio.Links[id];
@@ -77,7 +82,7 @@ const Radio = {
         hr.onended = Radio.PlayAds;
     },
     PlayAds: async () => {
-        if (!Radio.IsPlaying) return;
+        if (!Radio.IsPlaying || Radio.FallbackURL) return;
         App.Mute();
     },
     _: async () => { },
