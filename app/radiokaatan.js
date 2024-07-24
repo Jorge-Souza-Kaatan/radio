@@ -3,8 +3,6 @@ const Radio = {
     IsPlaying: false,
     IsChecked: false,
     Volume: 1,
-    URL1: "https://kaatan.loca.lt/radio/stream",
-    URL2: "https://stream.zeno.fm/sklftdr6odruv",
     FallbackURL: false,
     GetLinks: (callback) => {
         fetch("/radio/app/links.json").then(res => res.json()).then(links => {
@@ -15,6 +13,9 @@ const Radio = {
             Modal.Error("Erro", "Houve um erro ao iniciar a aplicação. Clique em Reiniciar e tente novamente", true, null);
         });
     },
+    
+    /** @description OBSOLETTE! */
+    /*
     GetUrl: async () => {
         try {
             const x = await fetch(Radio.URL1);
@@ -28,6 +29,8 @@ const Radio = {
             return Radio.URL2;
         }
     },
+    */
+    
     TimeControl: async (callback) => {
         const now = new Date();
         const currentMinutes = now.getMinutes();
@@ -50,7 +53,7 @@ const Radio = {
         if (!Radio.IsPlaying) {
             const radio = document.getElementById("radio");
             radio.setAttribute("type", "audio/mpeg");
-            radio.src = await Radio.GetUrl();
+            radio.src = "https://stream.zeno.fm/sklftdr6odruv";
             radio.play();
             Radio.IsPlaying = true;
             radio.addEventListener("ended", App.PlayPause);
