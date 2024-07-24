@@ -30,19 +30,21 @@ const Radio = {
     },
     TimeControl: async (callback) => {
         const now = new Date();
-        const nextQuarterMinute = Math.ceil(now.getMinutes() / 15) * 15;
-        let nextQuarterHour = new Date(now);
-        nextQuarterHour.setMinutes(nextQuarterMinute % 60);
-        if (nextQuarterMinute === 60) {
-            nextQuarterHour.setHours(now.getHours() + 1);
+        const currentMinutes = now.getMinutes();
+        
+        const nextHalfMinute = (Math.floor(currentMinutes / 30) + 1) * 30;
+        let nextHalfHour = new Date(now);
+        nextHalfHour.setMinutes(nextHalfMinute % 60);
+        if (nextHalfMinute >= 60) {
+            nextHalfHour.setHours(now.getHours() + 1);
         }
-        nextQuarterHour.setSeconds(0);
-        nextQuarterHour.setMilliseconds(0);
-        const timeToNextQuarter = nextQuarterHour - now;
+        nextHalfHour.setSeconds(0);
+        nextHalfHour.setMilliseconds(0);
+        const timeToNextHalf = nextHalfHour - now;
         setTimeout(() => {
             callback();
-            setInterval(callback, 15 * 60 * 1000);
-        }, timeToNextQuarter);
+            setInterval(callback, 30 * 60 * 1000);
+        }, timeToNextHalf);
     },
     Stream: async () => {
         if (!Radio.IsPlaying) {
@@ -69,9 +71,11 @@ const Radio = {
         }
     },
     SpeakHour: async () => {
-        if (!Radio.IsPlaying || Radio.FallbackURL) return;
-        let id = new Date().toLocaleTimeString().split(":").join("").slice(0, -2);
-        if (Number(id) > 1259) id = (Number(id) - 1200).toString().padStart(4, "0");
+        //if (!Radio.IsPlaying || Radio.FallbackURL) return;
+        let id = new Date().toLocaleTimeString().split(":").slice(0, -1).join("");
+        if (Number(id) > 1259) id = (Number(id) - 1200);
+        id = id.toString().padStart(4, "0");
+        //
         const link = Radio.Links[id];
         console.log(link)
         App.Mute();
