@@ -8,17 +8,17 @@
     <meta name="description" content="">
 
     <!-- SCRIPTS -->
-    <script src="/radio/app/kaatan.js"></script>
-    <script src="/radio/app/radiokaatan.js"></script>
-    <script src="/radio/acacia/acacia.js"></script>
-    <script src="/radio/acacia/content.js"></script>
-    <script src="/radio/acacia/renderer.js"></script>
+    <script src="./app/kaatan.js"></script>
+    <script src="./app/radiokaatan.js"></script>
+    <script type="module" src="https://cdn-kaatan.azurewebsites.net/lib/acacia/acacia.js"></script>
+    <script src="https://cdn-kaatan.azurewebsites.net/lib/acacia/content.js"></script>
+    <script src="https://cdn-kaatan.azurewebsites.net/lib/acacia/renderer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
     <!-- STYLES -->
-    <link rel="stylesheet" href="/radio/app/app.css">
-    <link rel="stylesheet" href="/radio/acacia/acacia.css">
+    <link rel="stylesheet" href="./app/app.css">
+    <link rel="stylesheet" href="https://cdn-kaatan.azurewebsites.net/lib/acacia/acacia.css">
     <!-- PWA -->
-    <link rel="shortcut icon" href="/radio/files/ret_branco.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="https://cdn-kaatan.azurewebsites.net/files/ret_branco.svg" type="image/x-icon">
     <title>Rádio Kaatan | 100% Brasileira</title>
 </head>
 
@@ -29,52 +29,53 @@
 </body>
 
 </html>
-<script>
+<script type="module" async>
+    import { Acacia } from 'https://cdn-kaatan.azurewebsites.net/lib/acacia/acacia.js';
     const sideMenu = {
         Links: [
             {
                 LinkTile: "Início",
-                LinkIcon: "/radio/files/home.svg",
+                LinkIcon: "https://cdn-kaatan.azurewebsites.net/files/home.svg",
                 LinkAction: () => App.Main()
             },
             {
                 LinkTile: "Sobre",
-                LinkIcon: "/radio/files/info.svg",
+                LinkIcon: "https://cdn-kaatan.azurewebsites.net/files/info.svg",
                 LinkAction: () => App.About()
             },
             {
                 LinkTile: "Diretrizes",
-                LinkIcon: "/radio/files/notes.svg",
+                LinkIcon: "https://cdn-kaatan.azurewebsites.net/files/notes.svg",
                 LinkAction: () => App.Rules()
             },
             {
                 LinkTile: "Inclusão de trilha",
-                LinkIcon: "/radio/files/plus.svg",
+                LinkIcon: "https://cdn-kaatan.azurewebsites.net/files/plus.svg",
                 LinkAction: () => App.AddTrackRequest()
             },
             {
                 LinkTile: "Remoção de trilha",
-                LinkIcon: "/radio/files/delete.svg",
+                LinkIcon: "https://cdn-kaatan.azurewebsites.net/files/delete.svg",
                 LinkAction: () => App.RemoveTrackRequest()
             },
             {
                 LinkTile: "Termos de uso",
-                LinkIcon: "/radio/files/home.svg",
+                LinkIcon: "https://cdn-kaatan.azurewebsites.net/files/home.svg",
                 LinkAction: () => App.Terms()
             },
             {
                 LinkTile: "Contato e suporte",
-                LinkIcon: "/radio/files/help-icon.svg",
+                LinkIcon: "https://cdn-kaatan.azurewebsites.net/files/help-icon.svg",
                 LinkAction: () => App.Support()
             },
             {
                 LinkTile: "Blog",
-                LinkIcon: "/radio/files/news.svg",
+                LinkIcon: "https://cdn-kaatan.azurewebsites.net/files/news.svg",
                 LinkAction: () => window.open('https://www.kaatan.com.br/news')
             },
             {
                 LinkTile: "Anúncio",
-                LinkIcon: "/radio/files/megaphone-speaker-svgrepo-com.svg",
+                LinkIcon: "https://cdn-kaatan.azurewebsites.net/files/megaphone-speaker-svgrepo-com.svg",
                 LinkAction: () => window.open('https://www.kaatan.com.br/anuncio')
             }
         ],
@@ -88,5 +89,5 @@
 
     }
 
-    const acacia = new Acacia("RADIO | Kaatan - 100% Brasileira", false, false, sideMenu, App.Main);
+    const acacia = new Acacia("RADIO | Kaatan - 100% Brasileira", false, sideMenu, App.Main);
 </script>
