@@ -3,7 +3,6 @@ const Radio = {
     IsPlaying: false,
     IsChecked: false,
     Volume: 1,
-    FallbackURL: false,
     TimeControl: async (callback) => {
         const now = new Date();
         const currentMinutes = now.getMinutes();
@@ -47,13 +46,11 @@ const Radio = {
         }
     },
     SpeakHour: async () => {
-        //if (!Radio.IsPlaying || Radio.FallbackURL) return;
         let id = new Date().toLocaleTimeString().split(":").slice(0, -1).join("");
         if (Number(id) > 1259) id = (Number(id) - 1200);
         id = id.toString().padStart(4, "0");
         //
         const link = Links[id];
-        console.log(link)
         App.Mute();
         const hr = document.getElementById("hr");
         hr.setAttribute("type", "audio/mpeg");
@@ -62,7 +59,7 @@ const Radio = {
         hr.onended = Radio.PlayAds;
     },
     PlayAds: async () => {
-        if (!Radio.IsPlaying || Radio.FallbackURL) return;
+        if (!Radio.IsPlaying) return;
         App.Mute();
     },
     _: async () => { },
