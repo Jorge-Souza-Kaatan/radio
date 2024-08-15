@@ -1,14 +1,14 @@
 <grid-column class="posts-view" style="display: flex;">
-    <card-big>
+    <card-big class="no-hover no-elastic">
         <text-subheading>
             Rádio Kaatan
         </text-subheading>
     </card-big>
-    <card-big id="player">
-        <img id="paused" src="https://cdn-kaatan.azurewebsites.net/files/radio_signal.svg">
-        <img id="playing" src="https://cdn-kaatan.azurewebsites.net/files/radio_signal_on.svg" style="display: none;">
+    <card-big id="player" class="no-hover no-elastic">
+        <img id="paused" src="https://cdn-kaatan.azurewebsites.net/files/radio_signal.svg" style="pointer-events: none;">
+        <img id="playing" src="https://cdn-kaatan.azurewebsites.net/files/radio_signal_on.svg" style="display: none; pointer-events: none;">
     </card-big>
-    <card-big>
+    <card-big class="no-hover no-elastic">
         <text-paragraph style="text-align: center;">
             Tocando os maiores sucessos nacionais de todos os tempos
         </text-paragraph>

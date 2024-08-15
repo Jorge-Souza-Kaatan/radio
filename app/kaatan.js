@@ -5,37 +5,34 @@ const App = {
         Renderer.Load("bottom-bar").then(bar => {
             BOTTOMBAR.innerHTML = bar;
         });
-        Renderer.Load("home").then(bar => {
-            APPVIEW.innerHTML = bar;
+        Renderer.Load("home").then(home => {
+            APPVIEW.innerHTML = home;
         });
         APPVIEW.style.alignItems = "center";
         //_.style.borderBlock = "none";
         APPVIEW.style.borderInline = "none";
     },
-    PlayPause: () => {
-        if (!Radio.IsPlaying) {
+    Radio: {
+        Play: () => {
             if (Radio.Stream()) {
                 document.getElementById("play-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/pause.svg";
                 document.getElementById("paused").style.display = "none";
                 document.getElementById("playing").style.display = "block";
-            }
-        } else {
-            document.getElementById("play-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/play.svg";
-            document.getElementById("paused").style.display = "block";
-            document.getElementById("playing").style.display = "none";
-            Radio.Stream();
-        }
-    },
-    Mute: () => {
-        if (document.getElementById('radio') != null) {
-            if (document.getElementById('radio').volume == 0) {
-                document.getElementById('radio').volume = 1;
-                document.getElementById("mute-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/volume.svg";
             } else {
-                document.getElementById('radio').volume = 0;
-                document.getElementById("mute-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/mute.svg";
+                document.getElementById("play-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/play.svg";
+                document.getElementById("paused").style.display = "block";
+                document.getElementById("playing").style.display = "none";
             }
-        }
+        },
+        Mute: () => {
+            if (Radio.Volume == 1) {
+                Radio.Mute(true);
+                document.getElementById("mute-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/mute.svg";
+            } else {
+                Radio.Mute(false);
+                document.getElementById("mute-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/volume.svg";
+            }
+        },
     },
     About: async () => {
         let _ = document.createElement("span");
