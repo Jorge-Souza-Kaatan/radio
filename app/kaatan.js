@@ -15,11 +15,11 @@ const App = {
     Radio: {
         Play: () => {
             if (Radio.Stream()) {
-                document.getElementById("play-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/pause.svg";
+                document.getElementById("play-btn").querySelector("img").src = "https://kaatan.loophole.site/cdn/files/pause.svg";
                 document.getElementById("paused").style.display = "none";
                 document.getElementById("playing").style.display = "block";
             } else {
-                document.getElementById("play-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/play.svg";
+                document.getElementById("play-btn").querySelector("img").src = "https://kaatan.loophole.site/cdn/files/play.svg";
                 document.getElementById("paused").style.display = "block";
                 document.getElementById("playing").style.display = "none";
             }
@@ -27,10 +27,10 @@ const App = {
         Mute: () => {
             if (Radio.Volume == 1) {
                 Radio.Mute(true);
-                document.getElementById("mute-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/mute.svg";
+                document.getElementById("mute-btn").querySelector("img").src = "https://kaatan.loophole.site/cdn/files/mute.svg";
             } else {
                 Radio.Mute(false);
-                document.getElementById("mute-btn").querySelector("img").src = "https://cdn-kaatan.azurewebsites.net/files/volume.svg";
+                document.getElementById("mute-btn").querySelector("img").src = "https://kaatan.loophole.site/cdn/files/volume.svg";
             }
         },
     },

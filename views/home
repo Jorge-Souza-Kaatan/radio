@@ -5,8 +5,8 @@
         </text-subheading>
     </card-big>
     <card-big id="player" class="no-hover no-elastic">
-        <img id="paused" src="https://cdn-kaatan.azurewebsites.net/files/radio_signal.svg" style="pointer-events: none;">
-        <img id="playing" src="https://cdn-kaatan.azurewebsites.net/files/radio_signal_on.svg" style="display: none; pointer-events: none;">
+        <img id="paused" src="https://kaatan.loophole.site/cdn/files/radio_signal.svg" style="pointer-events: none;">
+        <img id="playing" src="https://kaatan.loophole.site/cdn/files/radio_signal_on.svg" style="display: none; pointer-events: none;">
     </card-big>
     <card-big class="no-hover no-elastic">
         <text-paragraph style="text-align: center;">
