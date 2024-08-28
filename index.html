@@ -8,16 +8,16 @@
     <meta name="description" content="">
 
     <!-- SCRIPTS -->
-    <script src="https://kaatan.loophole.site/cdn/radio/lib/radiokaatan.js" type="module"></script>
+    <script id="rscs_scr_1" type="module"></script>
     <script src="./app/kaatan.js"></script>
-    <script type="module" src="https://kaatan.loophole.site/cdn/lib/acacia/acacia.js"></script>
-    <script type="module" src="https://kaatan.loophole.site/cdn/lib/acacia/content.js"></script>
-    <script type="module" src="https://kaatan.loophole.site/cdn/lib/acacia/renderer.js"></script>
+    <script id="rscs_scr_2" type="module"></script>
+    <script id="rscs_scr_3" type="module"></script>
+    <script id="rscs_scr_4" type="module"></script>
     <!-- STYLES -->
     <link rel="stylesheet" href="./app/app.css">
-    <link rel="stylesheet" href="https://kaatan.loophole.site/cdn/lib/acacia/acacia.css">
+    <link id="rscs_sty_1" rel="stylesheet">
     <!-- PWA -->
-    <link rel="shortcut icon" href="https://kaatan.loophole.site/cdn/files/ret_branco.svg" type="image/x-icon">
+    <link id="rscs_sty_2" rel="shortcut icon" type="image/x-icon">
     <title>Rádio Kaatan | 100% Brasileira</title>
 </head>
 
@@ -25,68 +25,154 @@
     <audio id="hr" style="display: none;"></audio>
     <audio id="radio" style="display: none;"></audio>
     <audio id="ads" style="display: none;"></audio>
+
+    <div class="offline-server" id="container-1">
+        <span>
+            <img src="files/kaatan_bot.svg" id="loading-img">
+        </span>
+        <p id="loading-txt">Carregando aplicação...</p>
+    </div>
+
+    <style>
+        .offline-server {
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            gap: 10px;
+            display: grid;
+            flex-direction: column;
+            align-content: center;
+            justify-items: center;
+            z-index: 1002;
+            background-color: #202530;
+            color: #FD9;
+            font-family: 'Segoe UI', system-ui, 'Open Sans', Verdana, sans-serif;
+            font-weight: lighter;
+            font-size: 1.2em;
+        }
+
+        .offline-server img {
+            height: 100px;
+        }
+
+        .offline-server span {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 50px;
+            display: grid;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .offline-server p {
+            text-align: center;
+            margin: auto;
+            width: 50%;
+        }
+    </style>
+
 </body>
 
 </html>
-<script type="module" async>
-    import { Acacia } from 'https://kaatan.loophole.site/cdn/lib/acacia/acacia.js';
-    const sideMenu = {
-        Links: [
-            {
-                LinkTile: "Início",
-                LinkIcon: "https://kaatan.loophole.site/cdn/files/home.svg",
-                LinkAction: () => App.Main()
-            },
-            {
-                LinkTile: "Sobre",
-                LinkIcon: "https://kaatan.loophole.site/cdn/files/info.svg",
-                LinkAction: () => App.About()
-            },
-            {
-                LinkTile: "Diretrizes",
-                LinkIcon: "https://kaatan.loophole.site/cdn/files/notes.svg",
-                LinkAction: () => App.Rules()
-            },
-            {
-                LinkTile: "Inclusão de trilha",
-                LinkIcon: "https://kaatan.loophole.site/cdn/files/plus.svg",
-                LinkAction: () => App.AddTrackRequest()
-            },
-            {
-                LinkTile: "Remoção de trilha",
-                LinkIcon: "https://kaatan.loophole.site/cdn/files/delete.svg",
-                LinkAction: () => App.RemoveTrackRequest()
-            },
-            {
-                LinkTile: "Termos de uso",
-                LinkIcon: "https://kaatan.loophole.site/cdn/files/home.svg",
-                LinkAction: () => App.Terms()
-            },
-            {
-                LinkTile: "Contato e suporte",
-                LinkIcon: "https://kaatan.loophole.site/cdn/files/help-icon.svg",
-                LinkAction: () => App.Support()
-            },
-            {
-                LinkTile: "Blog",
-                LinkIcon: "https://kaatan.loophole.site/cdn/files/news.svg",
-                LinkAction: () => window.open('https://www.kaatan.com.br/news')
-            },
-            {
-                LinkTile: "Anúncio",
-                LinkIcon: "https://kaatan.loophole.site/cdn/files/megaphone-speaker-svgrepo-com.svg",
-                LinkAction: () => window.open('https://www.kaatan.com.br/anuncio')
-            }
-        ],
-        ShowProfileSection: false,
-        ProfileSection: {
-            ProfilePic: null,
-            ProfileName: null,
-            ProfileUsername: null,
-            Action: null
-        }
+<script type="module">
+    window.addEventListener("DOMContentLoaded", e => {
+        setTimeout(loadRsrc, 1999);
+    });
+    async function loadRsrc() {
+        const fetchTest = [false, false];
+        await fetch("https://kaatan.loophole.site/").then(x => {
+            fetchTest[0] = true;
+            console.log("Servidor principal online");
+        }).catch(err => {
+            fetchTest[0] = false;
+            console.log("Servidor principal offline");
+        });
+        await fetch("https://kaatan.loophole.site/cdn/").then(x => {
+            fetchTest[1] = true;
+            console.log("Servidor CDN online");
+        }).catch(err => {
+            fetchTest[1] = false;
+            console.log("Servidor CDN offline");
+        });
 
+        if (!fetchTest.includes(false)) {
+            document.getElementById("container-1").style.display = "none";
+            // Fetch online scripts:
+            document.getElementById("rscs_scr_1").setAttribute("src", "https://kaatan.loophole.site/cdn/radio/lib/radiokaatan.js");
+            document.getElementById("rscs_scr_2").setAttribute("src", "https://kaatan.loophole.site/cdn/lib/acacia/acacia.js");
+            document.getElementById("rscs_scr_3").setAttribute("src", "https://kaatan.loophole.site/cdn/lib/acacia/content.js");
+            document.getElementById("rscs_scr_4").setAttribute("src", "https://kaatan.loophole.site/cdn/lib/acacia/renderer.js");
+            // Fetch online styles:
+            document.getElementById("rscs_sty_1").setAttribute("href", "https://kaatan.loophole.site/cdn/lib/acacia/acacia.css");
+            document.getElementById("rscs_sty_2").setAttribute("href", "https://kaatan.loophole.site/cdn/files/ret_branco.svg");
+            // Render application:
+            const sideMenu = {
+                Links: [
+                    {
+                        LinkTile: "Início",
+                        LinkIcon: "https://kaatan.loophole.site/cdn/files/home.svg",
+                        LinkAction: () => App.Main()
+                    },
+                    {
+                        LinkTile: "Sobre",
+                        LinkIcon: "https://kaatan.loophole.site/cdn/files/info.svg",
+                        LinkAction: () => App.About()
+                    },
+                    {
+                        LinkTile: "Diretrizes",
+                        LinkIcon: "https://kaatan.loophole.site/cdn/files/notes.svg",
+                        LinkAction: () => App.Rules()
+                    },
+                    {
+                        LinkTile: "Inclusão de trilha",
+                        LinkIcon: "https://kaatan.loophole.site/cdn/files/plus.svg",
+                        LinkAction: () => App.AddTrackRequest()
+                    },
+                    {
+                        LinkTile: "Remoção de trilha",
+                        LinkIcon: "https://kaatan.loophole.site/cdn/files/delete.svg",
+                        LinkAction: () => App.RemoveTrackRequest()
+                    },
+                    {
+                        LinkTile: "Termos de uso",
+                        LinkIcon: "https://kaatan.loophole.site/cdn/files/home.svg",
+                        LinkAction: () => App.Terms()
+                    },
+                    {
+                        LinkTile: "Contato e suporte",
+                        LinkIcon: "https://kaatan.loophole.site/cdn/files/help-icon.svg",
+                        LinkAction: () => App.Support()
+                    },
+                    {
+                        LinkTile: "Blog",
+                        LinkIcon: "https://kaatan.loophole.site/cdn/files/news.svg",
+                        LinkAction: () => window.open('https://www.kaatan.com.br/news')
+                    },
+                    {
+                        LinkTile: "Anúncio",
+                        LinkIcon: "https://kaatan.loophole.site/cdn/files/megaphone-speaker-svgrepo-com.svg",
+                        LinkAction: () => window.open('https://www.kaatan.com.br/anuncio')
+                    }
+                ],
+                ShowProfileSection: false,
+                ProfileSection: {
+                    ProfilePic: null,
+                    ProfileName: null,
+                    ProfileUsername: null,
+                    Action: null
+                }
+
+            }
+            const acacia = new Acacia("RADIO | Kaatan - 100% Brasileira", false, sideMenu, App.Main);
+        } else {
+            document.getElementById("loading-txt").innerHTML = "Oh não! Parece que nossos servidores estão offline...<br>Não se preocupe, estamos trabalhando para restabelecer seu acesso, retorne em breve.";
+            document.getElementById("loading-img").src = "files/erro.svg";
+        }
     }
 
-    const acacia = new Acacia("RADIO | Kaatan - 100% Brasileira", false, sideMenu, App.Main);
+    import { Acacia } from 'https://kaatan.loophole.site/cdn/lib/acacia/acacia.js';
 </script>
