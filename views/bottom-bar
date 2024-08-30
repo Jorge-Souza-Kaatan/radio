@@ -1,13 +1,13 @@
 <div class="bottom-bar">
     <span class="void"></span>
     <span id="refresh-btn" onclick="window.location.reload()" class="elastic">
-        <img id="refresh-btn-img" src="https://kaatan.loophole.site/cdn/files/refresh.svg">
+        <img id="refresh-btn-img" src="https://kaatan.azurewebsites.net/files/refresh.svg">
     </span>
     <span id="play-btn" class="elastic" onclick="App.Radio.Play()">
-        <img id="play-btn-img" src="https://kaatan.loophole.site/cdn/files/play.svg">
+        <img id="play-btn-img" src="https://kaatan.azurewebsites.net/files/play.svg">
     </span>
     <span id="mute-btn" class="elastic" onclick="App.Radio.Mute()">
-        <img id="mute-btn-img" src="https://kaatan.loophole.site/cdn/files/volume.svg">
+        <img id="mute-btn-img" src="https://kaatan.azurewebsites.net/files/volume.svg">
     </span>
     <span class="void"></span>
 </div>
