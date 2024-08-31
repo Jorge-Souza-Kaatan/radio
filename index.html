@@ -82,7 +82,6 @@
 <script type="module" async>
     await fetch("https://kaatan.loophole.site/kaatanserver/quote/").then(x => x.text()).then(quote => {
         console.log("Servidor principal online");
-        document.getElementById("quote").innerText = quote;
     }).catch(err => {
         console.log("Servidor principal offline");
         document.getElementById("container-1").style.display = "grid";
